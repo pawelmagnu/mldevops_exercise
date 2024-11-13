@@ -30,7 +30,9 @@ repos:
     rev: v2.2.6
     hooks:
       - id: codespell
-        args: [--write-changes --skip="*.ipynb"]
+        # skip all .ipynb files
+        files: .*\.(?!ipynb$)[^.]+$
+        args: [--write-changes]
 
   # Pyupgrade - automatically upgrade syntax for newer versions of the language.
   - repo: https://github.com/asottile/pyupgrade
